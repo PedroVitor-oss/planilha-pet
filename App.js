@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState}  from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View,FlatList} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import listClients from './models/listClients';
 
 export default function App() {
   const getCurrentDate=()=>{
@@ -18,7 +19,8 @@ export default function App() {
     return date + '/' + month + '/' + year;
   }
   const [selectedClient, setSelectedClinnet] = useState();
-  
+  let Clients = listClients.Clients
+
   
   return (
     <View style={styles.container}>
@@ -35,7 +37,9 @@ export default function App() {
 
         <Text style={styles.data}>{getCurrentDate()}</Text>
       </View>
-      
+      <View>
+       
+      </View>
       <StatusBar style="auto" />
     </View>
   );
